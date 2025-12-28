@@ -111,5 +111,5 @@ If your command uses shell operators like:
 
 wrap the entire command in quotes, otherwise your shell will interpret it before qc can save it: 
 ```bash
-qc s example "echo one && echo two) | grep two"
+qc s example "(echo one && echo two) | grep two"
 ```
