@@ -67,6 +67,7 @@ qc --version
 
 ```bash
 qc s up -- docker compose up -d
+qc s update "sudo apt update && sudo apt upgrade" 
 ```
 
 ### Run a command
@@ -81,13 +82,11 @@ qc r up
 qc ls
 ```
 
-
 ### Show a command
 
 ```bash
 qc sh up
 ```
-
 
 ### Remove a command
 
