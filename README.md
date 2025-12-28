@@ -29,7 +29,7 @@ cargo install --path . --force
 ```
 
 ### Option 2: Download a prebuilt binary (no Rust required)
-1. Go to **Releases** on GitHub
+1. Go to [Releases](https://github.com/AlexAxenti/QuickCmd/releases) on GitHub
 2. Download the binary for your OS:
     -  qc-windows-x86_64.exe
     - qc-linux-x86_64
@@ -92,6 +92,3 @@ wrap the entire command in quotes, otherwise your shell will interpret it before
 ```bash
 qc s example "echo one && echo two) | grep two"
 ```
-
-## License
-No license yet (all rights reserved for now).
