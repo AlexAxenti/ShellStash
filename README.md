@@ -16,7 +16,7 @@ QuickCmd (`qc`) is a small CLI tool that lets you save and run frequently used s
 
 ## Installation
 
-### Option 1: One-line install ("Linux / macOS") (No Rust required)
+### Option 1: One-line install (Linux / macOS) (No Rust required)
 ```bash
 curl -fsSL https://raw.githubusercontent.com/AlexAxenti/QuickCmd/main/install.sh | sh
 ```
