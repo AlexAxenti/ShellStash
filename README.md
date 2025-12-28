@@ -21,6 +21,11 @@ QuickCmd (`qc`) is a small CLI tool that lets you save and run frequently used s
 curl -fsSL https://raw.githubusercontent.com/AlexAxenti/QuickCmd/main/install.sh | sh
 ```
 
+Consider saving the installer itself into QuickCmd for future updates!
+```bash
+qc s update-qc "curl -fsSL https://raw.githubusercontent.com/AlexAxenti/QuickCmd/main/install.sh | bash"
+```
+
 ### Option 2: Install with Cargo (Rust required)
 
 Remotely from GitHub repo:
