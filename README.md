@@ -67,7 +67,8 @@ qc --version
 
 ```bash
 qc s up -- docker compose up -d
-# Use quotations with shell operators:
+
+# Or use quotations, required with shell operators:
 qc s update "sudo apt update && sudo apt upgrade" 
 ```
 
@@ -77,10 +78,13 @@ qc s update "sudo apt update && sudo apt upgrade"
 qc r up
 ```
 
-### List all command
+### List all commands
 
 ```bash
 qc ls
+
+# Print both saved name and command:
+qc ls -a
 ```
 
 ### Show a command
