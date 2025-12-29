@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-REPO="AlexAxenti/QuickCmd"
-BINARY="qc"
+REPO="AlexAxenti/ShellStash"
+BINARY="st"
 INSTALL_DIR="/usr/local/bin"
 
 OS="$(uname -s | tr '[:upper:]' '[:lower:]')"
@@ -18,8 +18,8 @@ case "$ARCH" in
 esac
 
 case "$OS" in
-  linux)   TARGET="qc-linux-$ARCH" ;;
-  darwin)  TARGET="qc-macos-$ARCH" ;;
+  linux)   TARGET="st-linux-$ARCH" ;;
+  darwin)  TARGET="st-macos-$ARCH" ;;
   *)
     echo "Unsupported OS: $OS"
     exit 1
@@ -36,5 +36,5 @@ chmod +x "$BINARY"
 echo "Installing to $INSTALL_DIR (may require sudo)..."
 sudo mv "$BINARY" "$INSTALL_DIR/$BINARY"
 
-echo "✅ QuickCmd installed!"
-echo "Run: qc --help"
+echo "ShellStash installed!"
+echo "Run: st --help"

@@ -7,8 +7,8 @@ use std::fs;
 use std::path::PathBuf;
 
 pub fn create_path() -> Result<PathBuf, String> {
-    let proj_dirs = ProjectDirs::from("com", "QuickCmd", "qc")
-        .ok_or_else(|| format!("Unable to create qc path"))?;
+    let proj_dirs = ProjectDirs::from("com", "ShellStash", "st")
+        .ok_or_else(|| format!("Unable to create ShellStash path"))?;
 
     let app_data_dir = proj_dirs.data_dir();
 
@@ -18,7 +18,7 @@ pub fn create_path() -> Result<PathBuf, String> {
 }
 
 pub fn initialize_file(cmds_file_path: &PathBuf) -> Result<(), String> {
-    let dir_path = cmds_file_path.parent().ok_or_else(|| format!("Unable to find qc directory"))?;
+    let dir_path = cmds_file_path.parent().ok_or_else(|| format!("Unable to find ShellStash directory"))?;
 
     fs::create_dir_all(dir_path)
             .map_err(|err| format!("Unable to create commands directory: {err}"))?;

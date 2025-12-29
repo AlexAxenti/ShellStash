@@ -3,15 +3,15 @@ use clap::{Parser, Subcommand};
 #[derive(Parser)]
 #[command(
     version,
-    name = "qc", 
-    about = "QuickCmd - save and run frequently used shell commands",
+    name = "st", 
+    about = "ShellStash - save and run frequently used shell commands",
     arg_required_else_help = true,
     subcommand_required = true,
     subcommand_help_heading = "Commands", 
     long_about = None,
     after_help = r#"Examples:
-    qc s up -- docker compose up -d
-    qc r up"#,
+    st s up -- docker compose up -d
+    st r up"#,
 )]
 #[command(propagate_version = true)]
 pub struct Cli {
@@ -31,8 +31,8 @@ Save a shell command under a name.
 Everything after `--` is stored exactly as written.
 
 Examples:
-    qc s up -- docker compose up -d
-    qc save logs "docker logs -f app""#
+    st s up -- docker compose up -d
+    st save logs "docker logs -f app""#
     )]
     Save { 
         name: String,
@@ -47,9 +47,9 @@ Examples:
 Run a saved command
 
 Examples:
-    qc s up -- docker compose up -d
-    qc r up
-    qc run up"#
+    st s up -- docker compose up -d
+    st r up
+    st run up"#
     )]
     Run {
         name: String,
@@ -62,8 +62,8 @@ Examples:
 List all saved commands
 
 Examples:
-    qc ls
-    qc list"#
+    st ls
+    st list"#
     )]
     List {
         /// Show full command text for each entry
@@ -78,9 +78,9 @@ Examples:
 Show the command saved to a name
 
 Examples:
-    qc s up -- docker compose up -d
-    qc sh up
-    qc show up"#
+    st s up -- docker compose up -d
+    st sh up
+    st show up"#
     )]
     Show {
         name: String,
@@ -93,17 +93,17 @@ Examples:
 Remove a saved command
 
 Examples:
-    qc s up -- docker compose up -d
-    qc rm up
-    qc remove up"#
+    st s up -- docker compose up -d
+    st rm up
+    st remove up"#
     )]
     Remove {
         name: String
     },
     #[command(
-        about = "Info about QuickCmd",
+        about = "Info about ShellStash",
         long_about = r#"
-Info about QuickCmd such as:
+Info about ShellStash such as:
 - Path used
 - Debugging tips
 - Usage recommendations, etc."#

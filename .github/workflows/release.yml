@@ -17,14 +17,14 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            bin: qc.exe
-            asset: qc-windows-x86_64.exe
+            bin: st.exe
+            asset: st-windows-x86_64.exe
           - os: ubuntu-latest
-            bin: qc
-            asset: qc-linux-x86_64
+            bin: st
+            asset: st-linux-x86_64
           - os: macos-latest
-            bin: qc
-            asset: qc-macos-x86_64
+            bin: st
+            asset: st-macos-x86_64
 
     steps:
       - name: Checkout

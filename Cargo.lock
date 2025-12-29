@@ -198,16 +198,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "quick_cmd"
-version = "0.1.2"
-dependencies = [
- "clap",
- "directories-next",
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "quote"
 version = "1.0.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -268,6 +258,16 @@ dependencies = [
  "serde",
  "serde_core",
  "zmij",
+]
+
+[[package]]
+name = "shell_stash"
+version = "0.1.2"
+dependencies = [
+ "clap",
+ "directories-next",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

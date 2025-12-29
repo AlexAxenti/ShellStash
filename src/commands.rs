@@ -53,7 +53,7 @@ fn run_in_shell(cmd: &str) -> std::io::Result<ExitStatus> {
 }
 
 pub fn info_command() {
-    println!(r#"QuickCmd (qc) stores and executes user-defined shell commands locally.
+    println!(r#"ShellStash (st) stores and executes user-defined shell commands locally.
 
 STORAGE
 --------
@@ -61,15 +61,15 @@ Your commands are stored in a JSON file on disk.
 
 Typical location on:
 Windows:
-  %APPDATA%\QuickCmd\qc\data\cmds.json
-    (usually C:\Users\<your-user>\AppData\Roaming\QuickCmd\qc\data\cmds.json)
+  %APPDATA%\ShellStash\st\data\cmds.json
+    (usually C:\Users\<your-user>\AppData\Roaming\ShellStash\st\data\cmds.json)
 
 Linux:
-  ~/.local/share/quickcmd/qc/cmds.json
-    (or $XDG_DATA_HOME/quickcmd/qc/cmds.json)
+  ~/.local/share/shellstash/st/cmds.json
+    (or $XDG_DATA_HOME/ShellStash/st/cmds.json)
 
 MacOS:
-  ~/Library/Application Support/QuickCmd/qc/cmds.json
+  ~/Library/Application Support/ShellStash/st/cmds.json
 
 FILE SAFETY & BACKUPS
 --------------------
@@ -85,7 +85,7 @@ If something goes wrong:
 1. Locate the data directory mentioned above
 2. Rename cmds.json to cmds.json.bad
 3. Rename cmds.json.bak to cmds.json
-4. Re-run `qc ls`
+4. Re-run `st ls`
 
 Do not manually edit the structure of cmds.json.
 Changing keys or formatting may corrupt your saved commands.
@@ -93,22 +93,22 @@ You may open it read-only to copy commands if needed.
 
 USAGE RECOMMENDATIONS
 --------------------
-QuickCmd is designed for speed and muscle memory.
+ShellStash is designed for speed and muscle memory.
 Use short aliases whenever possible:
 
-  qc s up "docker compose up -d"
-  qc r up
+  st s up "docker compose up -d"
+  st r up
 
 When saving commands that contain shell operators
 such as &&, |, >, <, or redirects, wrap the command in quotes:
 
-  qc s test "echo one && echo two"
+  st s test "echo one && echo two"
 
 Using:
-  qc s test -- echo one && echo two
+  st s test -- echo one && echo two
 
 will NOT behave the same, because the shell interprets
-operators like && before qc receives the command.
+operators like && before st receives the command.
 
 TROUBLESHOOTING
 ---------------
@@ -117,6 +117,6 @@ TROUBLESHOOTING
 - Commands behave differently than expected:
     Check quoting and shell operator usage.
 - Commands depend on paths:
-    Remember commands run from the directory where qc is invoked."#
+    Remember commands run from the directory where st is invoked."#
 );
 }

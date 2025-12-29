@@ -1,6 +1,6 @@
-# QuickCmd (qc)
+# ShellStash (st)
 
-QuickCmd (`qc`) is a small CLI tool that lets you save and run frequently used shell commands so you don’t have to memorize them or repeatedly retype them.
+ShellStash (`st`) is a small CLI tool that lets you save and run frequently used shell commands so you don’t have to memorize them or repeatedly retype them.
 
 ---
 
@@ -18,19 +18,19 @@ QuickCmd (`qc`) is a small CLI tool that lets you save and run frequently used s
 
 ### Option 1: One-line install (Linux / macOS) (No Rust required)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AlexAxenti/QuickCmd/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/AlexAxenti/ShellStash/main/install.sh | sh
 ```
 
-Consider saving the installer itself into QuickCmd for future updates!
+Consider saving the installer itself into ShellStash for future updates!
 ```bash
-qc s update-qc "curl -fsSL https://raw.githubusercontent.com/AlexAxenti/QuickCmd/main/install.sh | sh"
+st s update-st "curl -fsSL https://raw.githubusercontent.com/AlexAxenti/ShellStash/main/install.sh | sh"
 ```
 
 ### Option 2: Install with Cargo (Rust required)
 
 Remotely from GitHub repo:
 ```bash
-cargo install --git https://github.com/AlexAxenti/QuickCmd --locked
+cargo install --git https://github.com/AlexAxenti/ShellStash --locked
 ```
 
 Or after cloning locally:
@@ -39,26 +39,26 @@ cargo install --path . --force
 ```
 
 ### Option 3: Download a prebuilt binary (no Rust required)
-1. Go to [Releases](https://github.com/AlexAxenti/QuickCmd/releases) on GitHub
+1. Go to [Releases](https://github.com/AlexAxenti/ShellStash/releases) on GitHub
 2. Download the binary for your OS:
-    -  qc-windows-x86_64.exe
-    - qc-linux-x86_64
-    - qc-macos-x86_64
+    - st-windows-x86_64.exe
+    - st-linux-x86_64
+    - st-macos-x86_64
 3. Put it somewhere already on your `PATH`
 
 #### Linux/macOS
 ```bash
-chmod +x qc-<os>-x86_64
-sudo mv qc-<os>-x86_64 /usr/local/bin/qc
+chmod +x st-<os>-x86_64
+sudo mv st-<os>-x86_64 /usr/local/bin/st
 ```
 
 #### Windows
-1. Rename to `qc.exe`
+1. Rename to `st.exe`
 2. Move it to a folder on PATH
 
 Test installation with:
 ```bash
-qc --version
+st --version
 ```
 
 ---
@@ -68,37 +68,37 @@ qc --version
 ### Save a command
 
 ```bash
-qc s up -- docker compose up -d
+st s up -- docker compose up -d
 
 # Or use quotations, required with shell operators:
-qc s update "sudo apt update && sudo apt upgrade" 
+st s update "sudo apt update && sudo apt upgrade" 
 ```
 
 ### Run a command
 
 ```bash
-qc r up
+st r up
 ```
 
 ### List all commands
 
 ```bash
-qc ls
+st ls
 
 # Print both saved name and command:
-qc ls -a
+st ls -a
 ```
 
 ### Show a command
 
 ```bash
-qc sh up
+st sh up
 ```
 
 ### Remove a command
 
 ```bash
-qc rm up
+st rm up
 ```
 
 ## Shell operators (important)
@@ -109,7 +109,7 @@ If your command uses shell operators like:
 - redirects (>, >>)
 - parentheses (())
 
-wrap the entire command in quotes, otherwise your shell will interpret it before qc can save it: 
+wrap the entire command in quotes, otherwise your shell will interpret it before st can save it: 
 ```bash
-qc s example "(echo one && echo two) | grep two"
+st s example "(echo one && echo two) | grep two"
 ```

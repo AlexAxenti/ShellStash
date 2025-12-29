@@ -1,10 +1,10 @@
 [package]
-name = "quick_cmd"
+name = "shell_stash"
 version = "0.1.2"
 edition = "2024"
 
 [[bin]]
-name = "qc"
+name = "st"
 path = "src/main.rs"
 
 [dependencies]
