@@ -28,10 +28,11 @@ pub fn list_commands(json: &FileJson, show_all: bool) {
     }
 }
 
-pub fn run_command(json: &FileJson, cmd_name: &str) -> Result<(), String> {
+pub fn run_command(json: &FileJson, cmd_name: &str, extra_cmd: &str) -> Result<(), String> {
     let cmd = json.commands.get(cmd_name).ok_or_else(|| format!("Unable to find command: {cmd_name}"))?;
 
-    let status = run_in_shell(cmd).map_err(|err| format!("Failed to run command: {err}"))?;
+    let complete_cmd = cmd.to_owned() + " " + extra_cmd;
+    let status = run_in_shell(&complete_cmd).map_err(|err| format!("Failed to run command: {err}"))?;
 
     if status.success() {
         return Ok(())

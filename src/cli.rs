@@ -49,10 +49,15 @@ Run a saved command
 Examples:
     st s up -- docker compose up -d
     st r up
-    st run up"#
+    st run up
+    
+    st s gl "git log --oneline"
+    st r gl --decorate --graph"#
     )]
     Run {
         name: String,
+        #[arg(trailing_var_arg = true)]
+        extra_cmd: Vec<String>,
     },
     #[command(
         alias = "ls",

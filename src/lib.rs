@@ -41,8 +41,9 @@ fn run_sub_command(sub_command: &Commands) -> Result<(), String> {
             is_dirty = true;
             println!("Saved command: \n {name}: {cmd}");
         },
-        Commands::Run { name } => {
-            run_command(&json, &name)?;
+        Commands::Run { name, extra_cmd } => {
+             let extra_cmd = extra_cmd.join(" ");
+            run_command(&json, &name, &extra_cmd)?;
         },
         Commands::List { all } => {
             list_commands(&json, *all);
