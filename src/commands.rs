@@ -68,12 +68,12 @@ pub fn copy_command(json: &FileJson, cmd_name: &str) -> Result<(), String> {
 
         stdin.write_all(cmd.as_bytes())
             .map_err(|e| format!("Failed to write to clipboard: {e}"))?;
-
-        child.wait()
+    }
+    
+    child.wait()
             .map_err(|e| format!("Clipboard process failed: {e}"))?;
 
-        Ok(())
-    }
+    Ok(())
 }
 
 pub fn info_command() {
